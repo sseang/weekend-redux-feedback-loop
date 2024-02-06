@@ -1,17 +1,20 @@
 import React from 'react';
 import { useState } from 'react';
+//failing when calling dispatch
 //add use dispatch
-import { useDispatch } from 'react-redux';
+//import { useDispatch } from 'react-redux';
 
+//send axios post instead?
 import axios from 'axios';
 import './App.css';
 
 function App() {
   const [inputFeeling, setInputFeeling] = useState('');
   //var for dispatch
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
 
   const handleSubmitFeeling = (event) => {
+    console.log('In my FEELINGS');
     //prevent refresh
     event.preventDefault();
     //action to storeInstance

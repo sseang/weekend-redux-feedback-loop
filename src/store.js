@@ -16,11 +16,11 @@ const feeling = (state = 0, action) => {
     //var to hold data
     //const id = state.length;
     const newFeeling = {
+      id,
       ...action.payload,
     };
     //data confirmed(... need to match action.payload?)
-    // return [...state, newFeeling];
-    return [newFeeling];
+    return [...state, newFeeling];
   }
   // Reducers always return state (existing value) by default
   return state;
@@ -37,9 +37,18 @@ const storeInstance = createStore(
 );
 
 // //Add Provider.
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <Provider store={storeInstance}>
+//     <App />
+//   </Provider>
+// );
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={storeInstance}>
-    <App />
-  </Provider>
+  <React.StrictMode>
+    <Provider store={storeInstance}>
+      <App />
+    </Provider>
+  </React.StrictMode>
 );
