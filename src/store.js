@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import App from './components/App/App';
 import { Provider } from 'react-redux';
 
-// /* import REDUX **/
-// import { createStore, combineReducers, applyMiddleware } from 'redux';
+// /* import REDUX & MIDDLE WARE **/
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 // import logger from 'redux-logger';
 
@@ -24,6 +24,16 @@ import { Provider } from 'react-redux';
 //   // Reducers always return state (existing value) by default
 //   return state;
 // };
+
+/* Create store */
+const storeInstance = createStore(
+  combineReducers({
+    // feeling call,
+    feeling,
+  }),
+  // Setup our logger
+  applyMiddleware(logger)
+);
 
 // //Add Provider.
 const root = ReactDOM.createRoot(document.getElementById('root'));
