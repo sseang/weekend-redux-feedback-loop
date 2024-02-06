@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 //add use dispatch
-import { useDispatch } from 'react-redux';
+//import { useDispatch } from 'react-redux';
 
 import axios from 'axios';
 import './App.css';
@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   const [inputFeeling, setInputFeeling] = useState('');
   //var for dispatch
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
 
   const handleSubmitFeeling = (event) => {
     //prevent refresh
