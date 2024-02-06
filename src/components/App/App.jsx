@@ -1,11 +1,28 @@
 import React from 'react';
 import { useState } from 'react';
+//add use dispatch
+import { useDispatch } from 'react-redux';
 
 import axios from 'axios';
 import './App.css';
 
 function App() {
   const [inputFeeling, setInputFeeling] = useState('');
+  //var for dispatch
+  const dispatch = useDispatch();
+
+  const handleSubmitFeeling = (event) => {
+    //prevent refresh
+    event.preventDefault();
+    //action to storeInstance
+    dispatch({
+      //payload to store: REMEMBER to create reducer in store.js and add wrap PROVIDER!!
+      type: `FEELING_COLUMN_ADD`,
+      payload: {
+        feeling: inputFeeling,
+      },
+    });
+  };
 
   return (
     <div className="App">
@@ -13,14 +30,16 @@ function App() {
         <h1 className="App-title">Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
-      <form>
+      <form onSubmit={handleSubmitFeeling}>
         <label>Feeling? </label>
         <input
           data-testid="input"
           onChange={(event) => setInputFeeling(event.target.value)}
           value={inputFeeling}
         />
-        <button data-testid="next">NEXT</button>
+        <button data-testid="next" type="submit">
+          NEXT
+        </button>
       </form>
     </div>
   );
