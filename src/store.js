@@ -13,14 +13,8 @@ import logger from 'redux-logger';
 const feeling = (state = 0, action) => {
   // ...call from Form
   if (action.type === 'FEELING_COLUMN_ADD') {
-    //var to hold data
-    //const id = state.length;
-    const newFeeling = {
-      id,
-      ...action.payload,
-    };
-    //data confirmed(... need to match action.payload?)
-    return [...state, newFeeling];
+    //return payload
+    return action.payload;
   }
   // Reducers always return state (existing value) by default
   return state;
@@ -43,12 +37,4 @@ const storeInstance = createStore(
 //     <App />
 //   </Provider>
 // );
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <Provider store={storeInstance}>
-      <App />
-    </Provider>
-  </React.StrictMode>
-);
+export default storeInstance;
