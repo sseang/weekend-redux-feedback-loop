@@ -25,6 +25,7 @@ function App() {
         feeling: inputFeeling,
       },
     });
+    setInputFeeling('');
   };
 
   //onchange event

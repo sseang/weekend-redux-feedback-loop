@@ -1,8 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './components/App/App';
-import { Provider } from 'react-redux';
-
 // /* import REDUX & MIDDLE WARE **/
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 
