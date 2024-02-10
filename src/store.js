@@ -37,6 +37,17 @@ const support = (state = 0, action) => {
   return state;
 };
 
+//rinse & repeat
+const comments = (state = 0, action) => {
+  // ...call from Form
+  if (action.type === 'COMMENT_COLUMN_ADD') {
+    //return payload
+    return action.payload;
+  }
+  // Reducers always return state (existing value) by default
+  return state;
+};
+
 /* Create store */
 const storeInstance = createStore(
   combineReducers({
@@ -44,6 +55,7 @@ const storeInstance = createStore(
     feeling,
     understand,
     support,
+    comments,
   }),
   // Setup our logger
   applyMiddleware(logger)

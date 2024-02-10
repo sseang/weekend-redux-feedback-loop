@@ -10,6 +10,7 @@ import Header from '../Header/Header';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
+import Comments from '../Comments/Comments';
 
 //send axios post instead?
 import axios from 'axios';
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route path="/support" exact>
           <Support />
+        </Route>
+        <Route path="/comments" exact>
+          <Comments />
         </Route>
       </Router>
     </div>
