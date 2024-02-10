@@ -38,7 +38,7 @@ const support = (state = '', action) => {
 };
 
 //rinse & repeat
-const comments = (state = [], action) => {
+const comments = (state = '', action) => {
   // ...call from Form
   if (action.type === 'COMMENT_COLUMN_ADD') {
     //return payload

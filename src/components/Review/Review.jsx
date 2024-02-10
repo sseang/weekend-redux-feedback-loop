@@ -2,6 +2,7 @@
 import axios from 'axios';
 //add useSelector for input data
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 function Review() {
   // store call: feeling
@@ -13,23 +14,71 @@ function Review() {
   const support = useSelector((state) => state.support);
   // store call: comments
   const comments = useSelector((state) => state.comments);
-  const length = name.length;
+  //store state?
+  const [setFeeling] = useState('');
+  const [setUnderstand] = useState('');
+  const [setSupport] = useState('');
+  const [setComment] = useState('');
 
-  const handleSubmitFeedback = (event) => {};
+  //TODO: add submit function
+  const handleSubmitFeedback = (event) => {
+    event.preventDefault();
+
+    // console.log(`Adding FEEDBACK`, { title, author });
+
+    // axios
+    //   .post('/api/feedback', { title, author })
+    //   .then((response) => {
+    //     // GET refresh our list
+    //     refreshBookList();
+    //   })
+    //   .catch((error) => {
+    //     console.log('ERROR:', error);
+    //   });
+
+    // // clear form inputs
+    // setTitle('');
+    // setAuthor('');
+  };
+  //TODO: add onchange function
 
   return (
     <div>
       <h2>Review Your Feedback</h2>
       <form onSubmit={handleSubmitFeedback}>
-        <div>Feelings:</div>
-        <input value={feeling} />
+        {/* //needs onChange */}
+        <div>Feeling:</div>
+        <input
+          type="text"
+          id="feeling"
+          onChange={(event) => setFeeling(event.target.value)}
+          value={feeling.feeling}
+        />
+
         <div>Understand:</div>
-        <input value={understand} />
+        <input
+          type="text"
+          id="understand"
+          onChange={(event) => setUnderstand(event.target.value)}
+          value={understand.understand}
+        />
         <div>Support:</div>
-        <input value={support} />
+        <input
+          type="text"
+          id="support"
+          onChange={(event) => setSupport(event.target.value)}
+          value={support.support}
+        />
         <div>Comments:</div>
-        <input value={comments} />
-        <button>Submit</button>
+        <input
+          type="text"
+          id="comment"
+          onChange={(event) => setComment(event.target.value)}
+          value={comments.comments}
+        />
+        <div>
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
   );
