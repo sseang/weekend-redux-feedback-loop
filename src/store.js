@@ -15,11 +15,22 @@ const feeling = (state = 0, action) => {
   return state;
 };
 
+const understand = (state = 0, action) => {
+  // ...call from Form
+  if (action.type === 'UNDERSTANDING_COLUMN_ADD') {
+    //return payload
+    return action.payload;
+  }
+  // Reducers always return state (existing value) by default
+  return state;
+};
+
 /* Create store */
 const storeInstance = createStore(
   combineReducers({
-    // feeling call,
+    // reflection call,
     feeling,
+    understand,
   }),
   // Setup our logger
   applyMiddleware(logger)
