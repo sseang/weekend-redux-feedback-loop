@@ -34,7 +34,7 @@ function Success() {
         <label>
           <h4>Thank You!</h4>
         </label>
-        <button type="submit" onClick={resetFeedback}>
+        <button data-testid="next" type="submit" onClick={resetFeedback}>
           Leave NEW Feedback
         </button>
       </header>

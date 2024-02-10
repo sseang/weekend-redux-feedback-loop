@@ -45,12 +45,13 @@ function Review() {
       .catch((error) => {
         console.log('ERROR!!!:', error);
       });
-  };
-
-  const handleClickToSuccess = () => {
-    //add path
     history.push('/success');
   };
+
+  // const handleClickToSuccess = () => {
+  //   //add path
+  //   history.push('/success');
+  // };
 
   //TODO: add onchange function
 
@@ -61,37 +62,38 @@ function Review() {
         {/* //needs onChange */}
         <div>Feeling:</div>
         <input
+          data-testid="input"
           type="number"
-          id="feeling"
           onChange={(event) => event.target.value}
           value={feeling}
         />
 
         <div>Understand:</div>
         <input
+          data-testid="input"
           type="number"
-          id="understand"
           onChange={(event) => event.target.value}
           value={understanding}
         />
         <div>Support:</div>
         <input
+          data-testid="input"
           type="number"
-          id="support"
           onChange={(event) => event.target.value}
           value={support}
         />
         <div>Comments:</div>
         <input
+          data-testid="input"
           type="text"
-          id="comment"
           //does not need to pass function in onchange see line 55
           // onChange={(event) => setComment(event.target.value)}
           onChange={(event) => event.target.value}
           value={comments}
         />
         <div>
-          <button type="submit" onClick={handleClickToSuccess}>
+          <button data-testid="next" type="submit">
+            {/* onClick={handleClickToSuccess}> */}
             Submit
           </button>
         </div>
