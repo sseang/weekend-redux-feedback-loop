@@ -20,9 +20,7 @@ function Support() {
     dispatch({
       //payload to store: REMEMBER to create reducer in store.js and add wrap PROVIDER!!
       type: 'SUPPORT_COLUMN_ADD',
-      payload: {
-        support: Number(inputSupport),
-      },
+      payload: Number(inputSupport),
     });
     setInputSupport('');
   };

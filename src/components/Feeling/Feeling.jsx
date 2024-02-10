@@ -17,9 +17,7 @@ function Feeling() {
     dispatch({
       //payload to store: REMEMBER to create reducer in store.js and add wrap PROVIDER!!
       type: 'FEELING_COLUMN_ADD',
-      payload: {
-        feeling: Number(inputFeeling),
-      },
+      payload: Number(inputFeeling),
     });
     setInputFeeling('');
   };
