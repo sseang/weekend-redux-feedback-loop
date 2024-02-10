@@ -3,9 +3,14 @@
 import axios from 'axios';
 //add useSelector for input data
 import { useSelector } from 'react-redux';
+//nav to new form
+import { useHistory } from 'react-router-dom';
 //import { useState } from 'react';
 
 function Review() {
+  //use push to new page
+  const history = useHistory();
+
   //let reflection = useSelector((state) => state);
 
   // // store call: feeling
@@ -41,6 +46,12 @@ function Review() {
         console.log('ERROR!!!:', error);
       });
   };
+
+  const handleClickToSuccess = () => {
+    //add path
+    history.push('/success');
+  };
+
   //TODO: add onchange function
 
   return (
@@ -80,7 +91,9 @@ function Review() {
           value={comments}
         />
         <div>
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={handleClickToSuccess}>
+            Submit
+          </button>
         </div>
       </form>
     </div>

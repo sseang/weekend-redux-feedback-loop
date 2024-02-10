@@ -12,6 +12,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import Success from '../Success/Success';
 
 //send axios post instead?
 import axios from 'axios';
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <Route path="/review" exact>
           <Review />
+        </Route>
+        <Route path="/success" exact>
+          <Success />
         </Route>
       </Router>
     </div>

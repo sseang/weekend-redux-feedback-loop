@@ -31,7 +31,25 @@ router.post('/', (req, res) => {
 });
 
 // TODO: This route RESETS for new feedback. See TODO for "TRUNCATE"
-router.delete('/', (req, res) => {});
+router.delete('/', (req, res) => {
+  //query to SQL
+  const queryText = `TRUNCATE TABLE "feedback";`;
+  //pool for query and data
+  pool
+    .query(queryText)
+    //promises
+    .then((result) => {
+      //confirm good data
+      res.sendStatus(200);
+    })
+    //catch errors
+    .catch((error) => {
+      //confirm and label if error
+      console.log('OH SHUCKS!!:', error);
+      //internal errors
+      res.sendStatus(500);
+    });
+});
 
 // DO NOT EDIT THIS ROUTE
 // This route must return all feedback.
