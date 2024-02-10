@@ -21,7 +21,7 @@ function Understanding() {
       //payload to store: REMEMBER to create reducer in store.js and add wrap PROVIDER!!
       type: 'UNDERSTANDING_COLUMN_ADD',
       payload: {
-        feeling: inputUnderstanding,
+        understand: Number(inputUnderstanding),
       },
     });
     setInputUnderstanding('');

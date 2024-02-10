@@ -1,4 +1,5 @@
 // TODO: add submit and axios POST
+//ODO: needs get route instead in review?
 import axios from 'axios';
 //add useSelector for input data
 import { useSelector } from 'react-redux';
@@ -6,39 +7,40 @@ import { useState } from 'react';
 
 function Review() {
   // store call: feeling
-  const feeling = useSelector((state) => state.feeling);
+  let feeling = useSelector((state) => state.feeling);
   // store call: understand
-  const understand = useSelector((state) => state.understand);
+  let understand = useSelector((state) => state.understand);
   // store call: support
 
-  const support = useSelector((state) => state.support);
+  let support = useSelector((state) => state.support);
   // store call: comments
-  const comments = useSelector((state) => state.comments);
+  let comments = useSelector((state) => state.comments);
   //store state?
-  const [setFeeling] = useState('');
-  const [setUnderstand] = useState('');
-  const [setSupport] = useState('');
-  const [setComment] = useState('');
+  const [feelings, setFeeling] = useState('');
+  const [understands, setUnderstand] = useState('');
+  const [supports, setSupport] = useState('');
+  const [comment, setComment] = useState('');
 
   //TODO: add submit function
+  //1st function POST not needed?
   const handleSubmitFeedback = (event) => {
     event.preventDefault();
 
-    // console.log(`Adding FEEDBACK`, { title, author });
+    console.log(`Adding FEEDBACK`, {
+      // feeling,
+      // understand,
+      // support,
+      // comments,
+    });
 
-    // axios
-    //   .post('/api/feedback', { title, author })
-    //   .then((response) => {
-    //     // GET refresh our list
-    //     refreshBookList();
-    //   })
-    //   .catch((error) => {
-    //     console.log('ERROR:', error);
-    //   });
-
-    // // clear form inputs
-    // setTitle('');
-    // setAuthor('');
+    axios
+      .post('/api/feedback', [feeling, understand, support, comments])
+      .then((response) => {
+        // GET refresh our list
+      })
+      .catch((error) => {
+        console.log('ERROR!!!:', error);
+      });
   };
   //TODO: add onchange function
 

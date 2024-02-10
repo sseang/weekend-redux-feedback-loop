@@ -10,7 +10,7 @@ router.post('/', (req, res) => {
   VALUES ($1, $2, $3, $4);
   `;
   const sqlValues = [
-    req.body.feeling,
+    Number(req.body.feeling),
     req.body.understanding,
     req.body.support,
     req.body.comments,
