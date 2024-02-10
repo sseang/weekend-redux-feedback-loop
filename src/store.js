@@ -16,7 +16,7 @@ const feeling = (state = 0, action) => {
 };
 
 //rinse & repeat
-const understand = (state = 0, action) => {
+const understanding = (state = 0, action) => {
   // ...call from Form
   if (action.type === 'UNDERSTANDING_COLUMN_ADD') {
     //return payload
@@ -75,7 +75,7 @@ const storeInstance = createStore(
     //reflection call,
     //reflection,
     feeling,
-    understand,
+    understanding,
     support,
     comments,
   }),

@@ -6,17 +6,17 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
 function Review() {
-  let reflection = useSelector((state) => state);
+  //let reflection = useSelector((state) => state);
 
   // // store call: feeling
-  // let feeling = useSelector((state) => state.feeling);
-  // // store call: understand
-  // let understanding = useSelector((state) => state.understand);
-  // // store call: support
+  let feeling = useSelector((state) => state.feeling);
+  // store call: understand
+  let understanding = useSelector((state) => state.understanding);
+  // store call: support
 
-  // let support = useSelector((state) => state.support);
-  // // store call: comments
-  // let comments = useSelector((state) => state.comments);
+  let support = useSelector((state) => state.support);
+  // store call: comments
+  let comments = useSelector((state) => state.comments);
   //store state?
   // const [feelings, setFeeling] = useState('');
   // const [understands, setUnderstand] = useState('');
@@ -48,34 +48,36 @@ function Review() {
       <h2>Review Your Feedback</h2>
       <form onSubmit={handleSubmitFeedback}>
         {/* //needs onChange */}
-        <div>Feeling:{JSON.stringify(reflection)}</div>
+        <div>Feeling:</div>
         <input
           type="number"
           id="feeling"
-          onChange={(event) => setFeeling(event.target.value)}
-          value={reflection}
+          onChange={(event) => event.target.value}
+          value={feeling}
         />
 
         <div>Understand:</div>
         <input
           type="number"
           id="understand"
-          onChange={(event) => setUnderstand(event.target.value)}
-          value={reflection.understanding}
+          onChange={(event) => event.target.value}
+          value={understanding}
         />
         <div>Support:</div>
         <input
           type="number"
           id="support"
-          onChange={(event) => setSupport(event.target.value)}
-          value={reflection.support}
+          onChange={(event) => event.target.value}
+          value={support}
         />
         <div>Comments:</div>
         <input
           type="text"
           id="comment"
-          onChange={(event) => setComment(event.target.value)}
-          value={reflection.comments}
+          //does not need to pass function in onchange see line 55
+          // onChange={(event) => setComment(event.target.value)}
+          onChange={(event) => event.target.value}
+          value={comments}
         />
         <div>
           <button type="submit">Submit</button>
