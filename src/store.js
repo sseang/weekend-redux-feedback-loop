@@ -83,11 +83,4 @@ const storeInstance = createStore(
   applyMiddleware(logger)
 );
 
-// //Add Provider.
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <Provider store={storeInstance}>
-//     <App />
-//   </Provider>
-// );
 export default storeInstance;

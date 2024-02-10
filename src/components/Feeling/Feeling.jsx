@@ -3,11 +3,15 @@ import { useState } from 'react';
 //failing when calling dispatch
 //add use dispatch
 import { useDispatch } from 'react-redux';
+//nav to new form
+import { useHistory } from 'react-router-dom';
 
 function Feeling() {
   const [inputFeeling, setInputFeeling] = useState('');
 
   const dispatch = useDispatch();
+  //use push to new page
+  const history = useHistory();
 
   const handleOnClickFeeling = (event) => {
     console.log('In my FEELINGS');
@@ -17,8 +21,11 @@ function Feeling() {
     dispatch({
       //payload to store: REMEMBER to create reducer in store.js and add wrap PROVIDER!!
       type: 'FEELING_COLUMN_ADD',
+      //change payload from object {} to normal
       payload: Number(inputFeeling),
     });
+    //add path
+    history.push('/understand');
     setInputFeeling('');
   };
 

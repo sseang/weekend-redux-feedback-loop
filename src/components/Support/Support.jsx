@@ -3,6 +3,8 @@ import { useState } from 'react';
 //failing when calling dispatch
 //add use dispatch
 import { useDispatch } from 'react-redux';
+//nav to new form
+import { useHistory } from 'react-router-dom';
 
 //send axios post instead?
 //import axios from 'axios';
@@ -11,6 +13,8 @@ function Support() {
   const [inputSupport, setInputSupport] = useState('');
 
   const dispatch = useDispatch();
+  //use push to new page
+  const history = useHistory();
 
   const handleOnClickSupport = (event) => {
     console.log('I Feel SUPPORT!!');
@@ -22,6 +26,8 @@ function Support() {
       type: 'SUPPORT_COLUMN_ADD',
       payload: Number(inputSupport),
     });
+    //add path
+    history.push('/comments');
     setInputSupport('');
   };
 

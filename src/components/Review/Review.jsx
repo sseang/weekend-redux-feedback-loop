@@ -1,9 +1,9 @@
 // TODO: add submit and axios POST
-//ODO: needs get route instead in review?
+
 import axios from 'axios';
 //add useSelector for input data
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
+//import { useState } from 'react';
 
 function Review() {
   //let reflection = useSelector((state) => state);

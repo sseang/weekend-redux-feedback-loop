@@ -3,6 +3,8 @@ import { useState } from 'react';
 //failing when calling dispatch
 //add use dispatch
 import { useDispatch } from 'react-redux';
+//nav to new form
+import { useHistory } from 'react-router-dom';
 
 //send axios post instead?
 //import axios from 'axios';
@@ -11,6 +13,8 @@ function Comments() {
   const [inputComment, setInputComment] = useState('');
 
   const dispatch = useDispatch();
+  //use push to new page
+  const history = useHistory();
 
   const handleOnClickComment = (event) => {
     console.log('Got COMMENTS!!??');
@@ -22,6 +26,8 @@ function Comments() {
       type: 'COMMENT_COLUMN_ADD',
       payload: inputComment,
     });
+    //add path
+    history.push('/review');
     setInputComment('');
   };
 
