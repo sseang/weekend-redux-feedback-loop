@@ -5,7 +5,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
 // /* Add REDUCERS */
-const feeling = (state = 0, action) => {
+const feeling = (state = '', action) => {
   // ...call from Form
   if (action.type === 'FEELING_COLUMN_ADD') {
     //return payload
@@ -16,7 +16,7 @@ const feeling = (state = 0, action) => {
 };
 
 //rinse & repeat
-const understand = (state = 0, action) => {
+const understand = (state = '', action) => {
   // ...call from Form
   if (action.type === 'UNDERSTANDING_COLUMN_ADD') {
     //return payload
@@ -27,7 +27,7 @@ const understand = (state = 0, action) => {
 };
 
 //rinse & repeat
-const support = (state = 0, action) => {
+const support = (state = '', action) => {
   // ...call from Form
   if (action.type === 'SUPPORT_COLUMN_ADD') {
     //return payload
@@ -38,7 +38,7 @@ const support = (state = 0, action) => {
 };
 
 //rinse & repeat
-const comments = (state = 0, action) => {
+const comments = (state = [], action) => {
   // ...call from Form
   if (action.type === 'COMMENT_COLUMN_ADD') {
     //return payload
@@ -47,11 +47,33 @@ const comments = (state = 0, action) => {
   // Reducers always return state (existing value) by default
   return state;
 };
-
+// //combine?
+// const reflection = (state = [], action) => {
+//   // ...call from Form
+//   if (action.type === 'FEELING_COLUMN_ADD') {
+//     //return payload
+//     return action.payload;
+//   }
+//   if (action.type === 'UNDERSTANDING_COLUMN_ADD') {
+//     //return payload
+//     return action.payload;
+//   }
+//   if (action.type === 'SUPPORT_COLUMN_ADD') {
+//     //return payload
+//     return action.payload;
+//   }
+//   if (action.type === 'COMMENT_COLUMN_ADD') {
+//     //return payload
+//     return action.payload;
+//   }
+//   // Reducers always return state (existing value) by default
+//   return state;
+// };
 /* Create store */
 const storeInstance = createStore(
   combineReducers({
     // reflection call,
+    //reflection,
     feeling,
     understand,
     support,
