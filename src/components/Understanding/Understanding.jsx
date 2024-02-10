@@ -12,7 +12,7 @@ function Understanding() {
 
   const dispatch = useDispatch();
 
-  const handleSubmitUnderstand = (event) => {
+  const handleOnclickUnderstand = (event) => {
     console.log('I am UNDERSTANDING!!');
     //prevent refresh
     event.preventDefault();
@@ -29,22 +29,22 @@ function Understanding() {
 
   //onchange event
   const handleAddUnderstand = (event) => {
-    setInputFeeling(event.target.value);
+    setInputUnderstanding(event.target.value);
   };
 
   return (
     <div className="Understand">
       <form>
-        <label>Feeling? </label>
+        <label>Understanding? </label>
         <input
           data-testid="input"
           onChange={handleAddUnderstand}
-          value={inputFeeling}
+          value={inputUnderstanding}
         />
         <button
           data-testid="next"
           type="button"
-          onClick={handleSubmitUnderstand}>
+          onClick={handleOnclickUnderstand}>
           NEXT
         </button>
       </form>

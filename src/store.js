@@ -15,9 +15,21 @@ const feeling = (state = 0, action) => {
   return state;
 };
 
+//rinse & repeat
 const understand = (state = 0, action) => {
   // ...call from Form
   if (action.type === 'UNDERSTANDING_COLUMN_ADD') {
+    //return payload
+    return action.payload;
+  }
+  // Reducers always return state (existing value) by default
+  return state;
+};
+
+//rinse & repeat
+const support = (state = 0, action) => {
+  // ...call from Form
+  if (action.type === 'SUPPORT_COLUMN_ADD') {
     //return payload
     return action.payload;
   }
@@ -31,6 +43,7 @@ const storeInstance = createStore(
     // reflection call,
     feeling,
     understand,
+    support,
   }),
   // Setup our logger
   applyMiddleware(logger)

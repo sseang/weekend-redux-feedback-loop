@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import Header from '../Header/Header';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
 
 //send axios post instead?
 import axios from 'axios';
@@ -22,10 +23,12 @@ function App() {
         <Route path="/" exact>
           <Feeling />
         </Route>
-
-        {/* <Route path="/understand" exact>
+        <Route path="/understand" exact>
           <Understanding />
-        </Route> */}
+        </Route>
+        <Route path="/support" exact>
+          <Support />
+        </Route>
       </Router>
     </div>
   );

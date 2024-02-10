@@ -9,7 +9,7 @@ function Feeling() {
 
   const dispatch = useDispatch();
 
-  const handleSubmitFeeling = (event) => {
+  const handleOnClickFeeling = (event) => {
     console.log('In my FEELINGS');
     //prevent refresh
     event.preventDefault();
@@ -38,7 +38,7 @@ function Feeling() {
           onChange={handleAddFeeling}
           value={inputFeeling}
         />
-        <button data-testid="next" type="button" onClick={handleSubmitFeeling}>
+        <button data-testid="next" type="button" onClick={handleOnClickFeeling}>
           NEXT
         </button>
       </form>
