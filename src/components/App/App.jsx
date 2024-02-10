@@ -19,7 +19,9 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <Feeling />
+        <Route path="/" exact>
+          <Feeling />
+        </Route>
 
         {/* <Route path="/understand" exact>
           <Understanding />
