@@ -41,7 +41,7 @@ function Feeling() {
         data-testid="input"
         type="number"
         onChange={handleAddFeeling}
-        value={inputFeeling}
+        // value={inputFeeling}
       />
       <button data-testid="next" type="button" onClick={handleOnClickFeeling}>
         NEXT

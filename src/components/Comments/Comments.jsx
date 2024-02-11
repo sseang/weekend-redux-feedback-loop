@@ -43,7 +43,7 @@ function Comments() {
         data-testid="input"
         type="text"
         onChange={handleAddComment}
-        value={inputComment}
+        // value={inputComment}
       />
       <button data-testid="next" type="button" onClick={handleOnClickComment}>
         NEXT

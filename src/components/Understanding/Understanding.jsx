@@ -42,7 +42,7 @@ function Understanding() {
         data-testid="input"
         type="number"
         onChange={handleAddUnderstand}
-        value={inputUnderstanding}
+        // value={inputUnderstanding}
       />
       <button
         data-testid="next"

@@ -1,5 +1,5 @@
 // TODO: add submit and axios POST
-
+import { postFeedback } from '../FeedbackApi/FeedbackApi';
 import axios from 'axios';
 //add useSelector for input data
 import { useSelector } from 'react-redux';
@@ -37,15 +37,16 @@ function Review() {
       `FEEDBACK: feeling - ${feeling}, understand - ${understanding}, support - ${support}, comments - ${comments}`
     );
 
-    axios
-      .post('/api/feedback', { feeling, understanding, support, comments })
+    postFeedback({ feeling, understanding, support, comments })
       .then((response) => {
         // GET refresh our list
+        console.log('feedback submitted successfully');
+
+        history.push('/thankyou');
       })
       .catch((error) => {
         console.log('ERROR!!!:', error);
       });
-    history.push('/thankyou');
   };
 
   // const handleClickToSuccess = () => {

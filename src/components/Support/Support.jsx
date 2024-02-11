@@ -10,7 +10,7 @@ import { useHistory } from 'react-router-dom';
 //import axios from 'axios';
 
 function Support() {
-  const [inputSupport, setInputSupport] = useState('');
+  const [inputSupport, setInputSupport] = useState(1);
 
   const dispatch = useDispatch();
   //use push to new page
@@ -43,7 +43,7 @@ function Support() {
         data-testid="input"
         type="number"
         onChange={handleAddSupport}
-        value={inputSupport}
+        // value={inputSupport}
       />
       <button data-testid="next" type="button" onClick={handleOnClickSupport}>
         NEXT
