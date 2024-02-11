@@ -38,17 +38,16 @@ function Comments() {
 
   return (
     <div className="Understand">
-      <form>
-        <label>Comments? </label>
-        <input
-          data-testid="input"
-          onChange={handleAddComment}
-          value={inputComment}
-        />
-        <button data-testid="next" type="button" onClick={handleOnClickComment}>
-          NEXT
-        </button>
-      </form>
+      <h2>Would like to add any comments? </h2>
+      <input
+        data-testid="input"
+        type="text"
+        onChange={handleAddComment}
+        value={inputComment}
+      />
+      <button data-testid="next" type="button" onClick={handleOnClickComment}>
+        NEXT
+      </button>
     </div>
   );
 }

@@ -45,7 +45,7 @@ function Review() {
       .catch((error) => {
         console.log('ERROR!!!:', error);
       });
-    history.push('/success');
+    history.push('/thankyou');
   };
 
   // const handleClickToSuccess = () => {
@@ -58,48 +58,59 @@ function Review() {
   return (
     <div>
       <h2>Review Your Feedback</h2>
-      <form onSubmit={handleSubmitFeedback}>
-        {/* //needs onChange */}
-        <div>Feeling:</div>
-        <input
-          data-testid="input"
-          type="number"
-          onChange={(event) => event.target.value}
-          value={feeling}
-        />
-
-        <div>Understand:</div>
-        <input
-          data-testid="input"
-          type="number"
-          onChange={(event) => event.target.value}
-          value={understanding}
-        />
-        <div>Support:</div>
-        <input
-          data-testid="input"
-          type="number"
-          onChange={(event) => event.target.value}
-          value={support}
-        />
-        <div>Comments:</div>
-        <input
-          data-testid="input"
-          type="text"
-          //does not need to pass function in onchange see line 55
-          // onChange={(event) => setComment(event.target.value)}
-          onChange={(event) => event.target.value}
-          value={comments}
-        />
-        <div>
-          <button data-testid="next" type="submit">
-            {/* onClick={handleClickToSuccess}> */}
-            Submit
-          </button>
-        </div>
-      </form>
+      <p>Feelings: {feeling}</p>
+      <p>Understanding: {understanding}</p>
+      <p>Support: {support}</p>
+      <p>Comments: {comments}</p>
+      <button data-testid="next" onClick={handleSubmitFeedback}>
+        Submit
+      </button>
     </div>
   );
 }
 
+{
+  //form giving errors
+  /* <label>review</label>
+<form onSubmit={handleSubmitFeedback}>
+  {/* //needs onChange */
+}
+//   <div>Feeling:</div>
+//   <input
+//     data-testid="input"
+//     type="number"
+//     onChange={(event) => event.target.value}
+//     value={feeling}
+//   />
+
+//   <div>Understand:</div>
+//   <input
+//     data-testid="input"
+//     type="number"
+//     onChange={(event) => event.target.value}
+//     value={understanding}
+//   />
+//   <div>Support:</div>
+//   <input
+//     data-testid="input"
+//     type="number"
+//     onChange={(event) => event.target.value}
+//     value={support}
+//   />
+//   <div>Comments:</div>
+//   <input
+//     data-testid="input"
+//     type="text"
+//     //does not need to pass function in onchange see line 55
+//     // onChange={(event) => setComment(event.target.value)}
+//     onChange={(event) => event.target.value}
+//     value={comments}
+//   />
+//   <div>
+//     <button data-testid="next" type="submit">
+//       {/* onClick={handleClickToSuccess}> */}
+//       Submit
+//     </button>
+//   </div>
+// </form> */}
 export default Review;

@@ -38,7 +38,7 @@ function App() {
         <Route path="/review" exact>
           <Review />
         </Route>
-        <Route path="/success" exact>
+        <Route path="/thankyou" exact>
           <Success />
         </Route>
       </Router>

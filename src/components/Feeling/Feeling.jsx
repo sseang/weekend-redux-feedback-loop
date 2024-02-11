@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function Feeling() {
-  const [inputFeeling, setInputFeeling] = useState('');
+  const [inputFeeling, setInputFeeling] = useState(1);
 
   const dispatch = useDispatch();
   //use push to new page
@@ -36,17 +36,16 @@ function Feeling() {
 
   return (
     <div>
-      <form>
-        <label>Feeling? </label>
-        <input
-          data-testid="input"
-          onChange={handleAddFeeling}
-          value={inputFeeling}
-        />
-        <button data-testid="next" type="button" onClick={handleOnClickFeeling}>
-          NEXT
-        </button>
-      </form>
+      <h2>Are you feeling ok?</h2>
+      <input
+        data-testid="input"
+        type="number"
+        onChange={handleAddFeeling}
+        value={inputFeeling}
+      />
+      <button data-testid="next" type="button" onClick={handleOnClickFeeling}>
+        NEXT
+      </button>
     </div>
   );
 }

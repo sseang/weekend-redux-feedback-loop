@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom';
 //import axios from 'axios';
 
 function Understanding() {
-  const [inputUnderstanding, setInputUnderstanding] = useState('');
+  const [inputUnderstanding, setInputUnderstanding] = useState(1);
 
   const dispatch = useDispatch();
   //use push to new page
@@ -37,20 +37,19 @@ function Understanding() {
 
   return (
     <div className="Understand">
-      <form>
-        <label>Understanding? </label>
-        <input
-          data-testid="input"
-          onChange={handleAddUnderstand}
-          value={inputUnderstanding}
-        />
-        <button
-          data-testid="next"
-          type="button"
-          onClick={handleOnclickUnderstand}>
-          NEXT
-        </button>
-      </form>
+      <h2>Are you understanding the material? </h2>
+      <input
+        data-testid="input"
+        type="number"
+        onChange={handleAddUnderstand}
+        value={inputUnderstanding}
+      />
+      <button
+        data-testid="next"
+        type="button"
+        onClick={handleOnclickUnderstand}>
+        NEXT
+      </button>
     </div>
   );
 }

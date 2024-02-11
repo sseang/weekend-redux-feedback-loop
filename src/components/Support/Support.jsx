@@ -38,17 +38,16 @@ function Support() {
 
   return (
     <div className="Understand">
-      <form>
-        <label>Support? </label>
-        <input
-          data-testid="input"
-          onChange={handleAddSupport}
-          value={inputSupport}
-        />
-        <button data-testid="next" type="button" onClick={handleOnClickSupport}>
-          NEXT
-        </button>
-      </form>
+      <h2>Do you have enough support? </h2>
+      <input
+        data-testid="input"
+        type="number"
+        onChange={handleAddSupport}
+        value={inputSupport}
+      />
+      <button data-testid="next" type="button" onClick={handleOnClickSupport}>
+        NEXT
+      </button>
     </div>
   );
 }

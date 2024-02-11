@@ -29,15 +29,11 @@ function Success() {
   return (
     <div>
       {/* T<diODO: add Header */}
-      <header className="success-header">
-        <h1 className="success-title">Feedback!</h1>
-        <label>
-          <h4>Thank You!</h4>
-        </label>
-        <button data-testid="next" type="submit" onClick={resetFeedback}>
-          Leave NEW Feedback
-        </button>
-      </header>
+      <h2>Thank You!</h2>
+      {/* <label>thank you</label> */}
+      <button data-testid="next" type="submit" onClick={resetFeedback}>
+        Leave NEW Feedback
+      </button>
     </div>
   );
 }

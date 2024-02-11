@@ -5,7 +5,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
 // /* Add REDUCERS */
-const feeling = (state = '', action) => {
+const feeling = (state = 1, action) => {
   // ...call from Form
   if (action.type === 'FEELING_COLUMN_ADD') {
     //return payload
@@ -16,7 +16,7 @@ const feeling = (state = '', action) => {
 };
 
 //rinse & repeat
-const understanding = (state = '', action) => {
+const understanding = (state = 1, action) => {
   // ...call from Form
   if (action.type === 'UNDERSTANDING_COLUMN_ADD') {
     //return payload
@@ -27,7 +27,7 @@ const understanding = (state = '', action) => {
 };
 
 //rinse & repeat
-const support = (state = '', action) => {
+const support = (state = 1, action) => {
   // ...call from Form
   if (action.type === 'SUPPORT_COLUMN_ADD') {
     //return payload
